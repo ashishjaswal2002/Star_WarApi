@@ -1,0 +1,10 @@
+
+.movie{
+    
+    text-align: center;
+      list-style-type:none;
+      background-color:white;
+      border-radius: 6px;
+      padding: 1px;
+      margin: 2em;
+  }

@@ -1,0 +1,42 @@
+.container{
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+   align-items: center;
+   margin-top: 3rem;
+background: rgb(2,0,36);
+   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(55,116,162,1) 20%, rgba(0,212,255,1) 100%); 
+  width: 500px;
+  margin: 0 auto;
+   height: 82px;
+   padding: 12px;
+   border-radius: 12px;
+}
+.button{
+    padding: 5px;
+    
+    background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
+    border :none;
+    font-size: 1.2rem;
+    border-radius:3px;
+
+    box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+transition: all 0.3s ease-in-out
+    
+
+}
+.button:hover {
+    transform: rotate(60deg);
+    transform: scale(1.02);
+    background-image: linear-gradient( 109.6deg, rgb(105, 245, 238) 11.2%, rgb(70, 86, 230) 91.1% );
+   
+  }
+  
+  
