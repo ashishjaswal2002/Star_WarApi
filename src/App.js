@@ -5,10 +5,15 @@ import MovieList from './Components/MovieList';
 
 function App() {
     const[movies,setMovies] = useState([]);
-     function fetchMoviesHandler(){
-      fetch('https://swapi.dev/api/films/').then(response=>{
-       return response.json();
-      }).then((data)=>{
+    // Now Assume that fetching data takes time then we have to show some loading Spinner.
+   const[isLoading,setisLoading]= useState(false);
+    async   function fetchMoviesHandler(){
+      setisLoading(true);
+     const response  = await fetch('https://swapi.dev/api/films/')
+      const data =  await response.json();
+
+      
+     
         const transformedMovies = data.results.map(moviedata=>{
           return{
             id:moviedata.episode_id,
@@ -19,8 +24,8 @@ function App() {
           }
         });     
       setMovies(transformedMovies);
-      });
 
+      setisLoading(false);
      }
   
   return (
@@ -30,9 +35,11 @@ function App() {
       <Button onClick = {fetchMoviesHandler}/>
     </section>
     <section>
-      <MovieList movies={movies} >
-
-      </MovieList>
+      {/* If movies is 0 and data is not arrived */}
+    {!isLoading && movies.length>0 && <MovieList movies={movies} ></MovieList>}
+    {/* If there is no movies  */}
+    {!isLoading && movies.length===0 && <p>Found No Movies</p>}
+    {isLoading && <p>Loading.....</p>}
     </section>
    
  
